@@ -1,5 +1,5 @@
 import docx2txt
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, jsonify
 import re
 import glob
 import shutil
