@@ -61,7 +61,8 @@ def upload_file():
 
         app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-        f = request.files.getlist('files[]')
+        # f = request.files.getlist('files[]')
+        f = request.files.getlist('files')
         for file in f:
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
@@ -130,7 +131,8 @@ def upload_file():
         sheet1.write(row, column, location[row-1])
         row = row + 1
     workbook.save("document.xls")
-    return render_template("index.html", resultsemail=di, resultsmob=resultsmob, num_of_results=num_of_results)
+    # return render_template("index.html", resultsemail=di, resultsmob=resultsmob, num_of_results=num_of_results)
+    return jsonify(di)
 
 
 @app.route("/download", methods=['GET', 'POST'])
