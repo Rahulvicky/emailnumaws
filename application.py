@@ -1,6 +1,6 @@
 import docx2txt
 from flask import Flask, render_template, request, send_file, jsonify
-from flask_cors import CORS
+# from flask_cors import CORS
 import re
 import glob
 import shutil
@@ -18,7 +18,7 @@ phone_num = re.compile(r'[6-9]{1}[0-9]{9}')
 
 
 application = app = Flask(__name__)
-CORS(application)
+# CORS(application)
 
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -36,7 +36,6 @@ def index():
 
 
 @app.route('/uploader', methods=['GET', 'POST'])
-@cross_origin()
 def upload_file():
     if request.method == 'POST':
         emailid = []
