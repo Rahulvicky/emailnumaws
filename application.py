@@ -18,10 +18,10 @@ phone_num = re.compile(r'[6-9]{1}[0-9]{9}')
 
 
 application = app = Flask(__name__)
-# CORS(application)
+CORS(app)
 
 
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = set(['docx', 'pdf'])
 
