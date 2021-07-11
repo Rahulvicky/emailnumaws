@@ -64,8 +64,8 @@ def upload_file():
 
         app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-        # f = request.files.getlist('files[]')
-        f = request.files.getlist('files')
+        f = request.files.getlist('files[]')
+        # f = request.files.getlist('files')
         for file in f:
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
