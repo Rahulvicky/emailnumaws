@@ -18,7 +18,7 @@ phone_num = re.compile(r'[6-9]{1}[0-9]{9}')
 
 
 application = app = Flask(__name__)
-CORS(application)
+# CORS(application)
 
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
