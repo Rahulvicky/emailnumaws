@@ -36,6 +36,7 @@ def index():
 
 
 @app.route('/uploader', methods=['GET', 'POST'])
+@cross_origin()
 def upload_file():
     if request.method == 'POST':
         emailid = []
