@@ -100,7 +100,10 @@ def upload_file():
             emailid.append(email_regex.findall(text1))
             mobile.append(phone_num.findall(text1))
             key = str(email_regex.findall(text1))
-            di[key] = phone_num.findall(text1)
+            ans_val = phone_num.findall(text1)
+            ans_val.append(" TEXT --->")
+            ans_val.append(text1)
+            di[key] = ans_val
             text1 = ""
         elif file.endswith(".docx"):
             text1 = docx2txt.process(file)
@@ -109,7 +112,10 @@ def upload_file():
             emailid.append(email_regex.findall(text1))
             mobile.append(phone_num.findall(text1))
             key = str(email_regex.findall(text1))
-            di[key] = phone_num.findall(text1)
+            ans_val = phone_num.findall(text1)
+            ans_val.append(" TEXT -->")
+            ans_val.append(text1)
+            di[key] = ans_val
             text1 = ""
 
 
